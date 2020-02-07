@@ -1,20 +1,50 @@
 import React, {Component} from 'react'
+import FoodItems from './FoodItems'
+import Edit from './Edit'
+import AddForm from './AddForm'
+
+import axios from 'axios'
 
 import '../App.css'
 
 class Pantry extends Component {
     constructor() {
         super()
-        this.state = {}
+        this.state = {foodArr: []}
     }
 
-    render() {
-        return (
+    componentDidMount() {
+        axios.get('/api/pantry').then(res => {
+            this.setState({foodArr: res.data})
+        })
+    }
+
+    returnAddedFood() {
+        
+    }
+
+
+     render() { 
+        const foodList = this.state.foodArr.map(element => {
+            return(
+                <FoodItems 
+                name={element.foodName}
+                percent={element.foodPercentage}
+                />
+            )
+    
+         })
+
+     return (
             <div className="Pantry">
-                <p>There's your pantry, bitch.</p>
+                {foodList}
+                <Edit />
+                <AddForm />
             </div>
         )
-    }
+   
 }
+}
+
 
 export default Pantry

@@ -11,7 +11,9 @@ class AddForm extends Component {
     render() {
         return (
             <div className="AddForm">
-                <p>Here's your AddForm, okay.</p>
+                <input type="text" />
+                <input type="range" />
+                <button>Add Food</button>
             </div>
         )
     }

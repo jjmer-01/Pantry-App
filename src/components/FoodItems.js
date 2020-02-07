@@ -10,8 +10,10 @@ class FoodItems extends Component {
 
     render() {
         return (
-            <div className="FoodItems">
-                <p>INDIVIDUAL FoodItems baby!!!</p>
+            <div className="FoodItemCont">
+                 <h3>{this.props.name}</h3>
+                <button>Edit</button>
+                <button>Delete</button>
             </div>
         )
     }

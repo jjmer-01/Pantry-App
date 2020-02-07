@@ -1,9 +1,6 @@
 import React, {Component} from 'react'
 import Header from './components/Header'
 import Pantry from './components/Pantry'
-import FoodItems from './components/FoodItems'
-import AddForm from './components/AddForm'
-import Edit from './components/Edit'
 
 import './App.css'
 
@@ -18,9 +15,6 @@ render() {
     <div className="App">
       <Header />
       <Pantry />
-      <FoodItems />
-      <AddForm />
-      <Edit />
     </div>
   )
 }
