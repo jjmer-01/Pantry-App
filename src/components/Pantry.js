@@ -20,7 +20,9 @@ class Pantry extends Component {
     }
 
     returnAddedFood() {
-        
+        axios.post('/api/pantry').then(res => {
+            this.setState({})
+        })
     }
 
 

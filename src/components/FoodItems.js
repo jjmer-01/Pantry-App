@@ -12,8 +12,11 @@ class FoodItems extends Component {
         return (
             <div className="FoodItemCont">
                  <h3>{this.props.name}</h3>
-                <button>Edit</button>
-                <button>Delete</button>
+                 <div className="FoodItemButtons">
+                    <button className="EditDeleteButt">Edit</button>
+                    <button className="EditDeleteButt">Delete</button>
+                 </div>
+                
             </div>
         )
     }

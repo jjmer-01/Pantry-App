@@ -11,9 +11,7 @@ class Edit extends Component {
     render() {
         return (
             <div className="Edit">
-                <input type="text" />
-                <input type="range" />
-                <button>Update Food</button>
+                <p>Edit.js Placeholder</p>
             </div>
         )
     }
