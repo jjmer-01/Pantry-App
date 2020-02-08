@@ -8,9 +8,14 @@ import axios from 'axios'
 import '../App.css'
 
 class Pantry extends Component {
-    constructor() {
-        super()
-        this.state = {foodArr: []}
+    constructor(props) {
+        super(props)
+        this.state = {
+            foodArr: [],
+            isEditing: false,
+            editingId: null
+        }
+        this.addFood = this.addFood.bind(this)
     }
 
     componentDidMount() {
@@ -19,9 +24,36 @@ class Pantry extends Component {
         })
     }
 
-    returnAddedFood() {
-        axios.post('/api/pantry').then(res => {
-            this.setState({})
+    addFood(name, percentage) {
+        axios.post('/api/pantry',{foodName: name, foodPercentage: percentage}).then(res => {
+            this.setState({foodArr: res.data})
+        })
+    }
+
+    editToggle = (id) =>{
+        if(id){
+            this.setState({
+                isEditing: true,
+                editingId: id
+            }) 
+        } else {
+            this.setState({
+                isEditing: false,
+                editingId: null
+            })
+        }
+   
+    }
+
+    updateFood = (id, foodName, foodPercentage) => {
+        axios.put(`/api/pantry/${id}`).then(res => {
+            this.setState({foodArr: res.data})
+        })
+    }
+
+    deleteFood = (id) => {
+        axios.delete(`/api/pantry/${id}`).then(res => {
+            this.setState({foodArr: res.data})
         })
     }
 
@@ -30,18 +62,49 @@ class Pantry extends Component {
         const foodList = this.state.foodArr.map(element => {
             return(
                 <FoodItems 
-                name={element.foodName}
-                percent={element.foodPercentage}
+                    id={element.id} 
+                    key={element.id}
+                    name={element.foodName} 
+                    percent={element.foodPercentage} 
+                    deleteFood={this.deleteFood}
+                    editToggle={this.editToggle}
                 />
             )
     
          })
 
+         const editFood =  this.state.foodArr.find(element => {
+             return(element.id === this.state.editingId)
+         })
+
      return (
             <div className="Pantry">
-                {foodList}
-                <Edit />
-                <AddForm />
+                <div className="FoodList">
+                    {foodList}
+                </div> 
+                <div>
+                {
+                    this.state.isEditing 
+                    ?
+                    (
+                        <Edit
+                            editFood={editFood}
+                            updateFood={this.updateFood}
+                            editToggle={this.editToggle}
+                        />
+                        )
+                        
+                    :
+                    (
+
+
+                        <AddForm 
+                            addFood={this.addFood}
+                        />
+                        )
+                     
+                }
+                </div>
             </div>
         )
    

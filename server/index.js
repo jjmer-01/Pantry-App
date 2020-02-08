@@ -12,6 +12,6 @@ app.use(cors())
 app.get('/api/pantry', addCtrl.displayPantryArr)
 app.post('/api/pantry', addCtrl.addFoodItem)
 app.put('/api/pantry/:id', addCtrl.updateFoodItem)
-app.delete('api/pantry/:id', addCtrl.deleteFoodItem)
+app.delete('/api/pantry/:id', addCtrl.deleteFoodItem)
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`))

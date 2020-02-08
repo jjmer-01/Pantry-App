@@ -32,6 +32,7 @@ module.exports = {
 
     addFoodItem: (req, res) => {
         const { foodName, foodPercentage } = req.body
+
         const newFood = {
             id: id,
             foodName: foodName,
@@ -45,10 +46,28 @@ module.exports = {
     updateFoodItem: (req, res) => {
         const { id } = req.params
         const { foodName, foodPercentage } =  req.body
+        const index = foodArr.findIndex(element => {
+            return element.id === +id
+        })
+
+        foodArr[index] = {
+            foodName: foodName,
+            foodPercentage: foodPercentage
+        }
+
+        axios.put()
+            .then()
+
+        res.status(200).send(foodArr)
+
     },
 
     deleteFoodItem: (req, res) => {
         const { id } = req.params
+
+        const index = foodArr.findIndex(element => {
+            return element.id === +id
+        })
 
         foodArr.splice(index, 1)
 
