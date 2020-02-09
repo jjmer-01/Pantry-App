@@ -92,12 +92,9 @@ class Pantry extends Component {
                             updateFood={this.updateFood}
                             editToggle={this.editToggle}
                         />
-                        )
-                        
+                    ) 
                     :
                     (
-
-
                         <AddForm 
                             addFood={this.addFood}
                         />

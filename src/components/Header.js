@@ -2,11 +2,11 @@ import React from 'react'
 
 import '../App.css'
 
-function Header(props) {
+function Header() {
     return (
     <div className="header">
         <h1>
-            Pantry App
+            PANTRY TRACKER
         </h1>
     </div>
     )

@@ -25,10 +25,13 @@ class Edit extends Component {
 
     render() {
         return (
-            <div className="Edit">
-                <input type="text" onChange={this.handleName} value={this.state.foodName} />
-                <input type="range" onChange={this.handlePercentage} value={this.state.foodPercentage} />
-                <button onClick={() => {
+            <div className="EditForm Forms">
+                <h2>EDIT {this.state.foodName}</h2>
+                <p>Food Name:</p>
+                <input className="NameInput" type="text" onChange={this.handleName} value={this.state.foodName} />
+                <p>How Full is the Container?</p>
+                <input className="PercentInput" type="range" onChange={this.handlePercentage} value={this.state.foodPercentage} />
+                <button className="FormButton" onClick={() => {
                     this.props.updateFood(this.props.editFood.id, this.state.foodName, this.state.foodPercentage)
                     this.props.editToggle()
                     }} >Update Food</button>

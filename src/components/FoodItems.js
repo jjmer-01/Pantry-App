@@ -13,8 +13,9 @@ class FoodItems extends Component {
     render() {
         return (
             <div className="FoodItemCont">
-                 <h3>{this.props.name}</h3>
-                 <div className="FoodItemButtons">
+                <h3>{this.props.name}</h3>
+                <p>{this.props.percent}%</p>
+                <div className="FoodItemButtons">
                     <button 
                         className="EditDeleteButt"
                         onClick={() => this.props.editToggle(this.props.id)} >
