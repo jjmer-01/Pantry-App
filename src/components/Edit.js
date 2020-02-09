@@ -28,10 +28,12 @@ class Edit extends Component {
             <div className="EditForm Forms">
                 <div className="Inputs">
                     <h2>EDIT {this.state.foodName}</h2>
-                    <p>Food Name:</p>
-                    <input className="NameInput" type="text" onChange={this.handleName} value={this.state.foodName} />
-                    <p>How Full is the Container?</p>
-                    <input className="PercentInput" type="range" onChange={this.handlePercentage} value={this.state.foodPercentage} />
+                    <label>Food Name:
+                        <input className="NameInput" id="editName" type="text" onChange={this.handleName} value={this.state.foodName} /></label>
+                    <label className="EditLabel">
+                        How Full is the Container?
+                    </label>
+                        <input className="PercentInput" type="range" min="0" max="100" onChange={this.handlePercentage} value={this.state.foodPercentage} />  
                 </div>
                 <button className="FormButton" onClick={() => {
                     this.props.updateFood(this.props.editFood.id, this.state.foodName, this.state.foodPercentage)

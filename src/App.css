@@ -25,11 +25,12 @@ h1 {
 }
 
 .FoodList {
-  background-color: lightblue;
+  /* background-color: lightblue; */
   /* height: 260px; */
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .FoodItemCont {
@@ -37,14 +38,14 @@ h1 {
   color: white;
   height: 300px;
   width: 200px;
-  margin: 10px;
+  margin: 30px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  border-radius: 30px;
+  border-radius: 0px 0px 30px 30px;
   border-color: gray;
   border-width: 10px;
 }
@@ -89,7 +90,7 @@ h2 {
     display: flex;
     justify-content: center;
     text-transform: uppercase;
-    margin-top: 50px;
+    margin-top: 10px;
     margin-bottom: 20px;
     box-sizing: border-box;
 }
@@ -97,8 +98,9 @@ h2 {
 .Forms {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
-  align-content: center;
+  align-content: space-around;
   box-sizing: border-box;
 }
 
@@ -114,8 +116,9 @@ h2 {
 
 .PercentInput {
   width: 50vw;
-  align-items: center;
+  display: flex;
   justify-content: center;
+  margin: 20px auto 10px auto;
 }
 
 .ItemPercent {
@@ -129,7 +132,7 @@ h2 {
   margin: 6px;
 }
 
-p {
+label {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,4 +150,12 @@ p {
   background-color: chocolate;
   color: white;
   font-weight: 800;
+  display: flex;
+  justify-content: center;
+  margin: 30px auto 30px auto;
+  
+}
+
+label {
+  margin-top: 30px;
 }
