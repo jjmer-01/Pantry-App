@@ -13,8 +13,10 @@ class FoodItems extends Component {
     render() {
         return (
             <div className="FoodItemCont">
-                <h3>{this.props.name}</h3>
-                <p>{this.props.percent}%</p>
+                <div className="FoodInfo">
+                    <h3>{this.props.name}</h3>
+                    <div className="ItemPercent">{this.props.percent}%</div>
+                </div>
                 <div className="FoodItemButtons">
                     <button 
                         className="EditDeleteButt"

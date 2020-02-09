@@ -6,15 +6,18 @@
 h1 {
   background-color: grey;
   color: white;
-  height: 100px;
   width: 100vw;
   display: flex;
   justify-content: center;
-  align-items: center;
+  font-family: 'Vast Shadow', cursive;
+  font-size: 67px;
+  font-weight: 100;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .Pantry {
-  background-color: whitesmoke;
+  background-color: lightblue;
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
@@ -22,29 +25,39 @@ h1 {
 }
 
 .FoodList {
-  background-color: whitesmoke;
-  height: 260px;
+  background-color: lightblue;
+  /* height: 260px; */
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
 }
 
 .FoodItemCont {
-  background-color: palevioletred;
+  background-color: white;
   color: white;
-  height: 200px;
-  width: 150px;
-  margin: 20px;
+  height: 300px;
+  width: 200px;
+  margin: 10px;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  position: relative;
   align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-radius: 30px;
+  border-color: gray;
+  border-width: 10px;
 }
 
 h3 {
   display: flex;
   justify-content: center;
+  font-family: 'Seaweed Script', cursive;
+  font-weight: 100;
+  font-size: 30px;
+  background-color: rgb(41, 39, 39);
+  border-radius: 50px;
+  padding: 5px;
 }
 
 .FoodItemButtons {
@@ -60,19 +73,25 @@ h3 {
   width: 110px;
   height: 25px;
   border-radius: 30px;
-  /* display: flex;
-  justify-content: center; */
+  margin: 3px;
+  background-color: chocolate;
+  font-weight: 800;
+  color: white;
 }
 
 h2 {
-    background-color: grey;
-    color: white;
-    height: 50px;
+    font-family: 'Vast Shadow', cursive;
+    font-size: 40px;
+    font-weight: 100;
+    background-color: white;
+    color: grey;
     width: 100vw;
     display: flex;
     justify-content: center;
-    align-items: center;
     text-transform: uppercase;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
 }
 
 .Forms {
@@ -84,9 +103,13 @@ h2 {
 }
 
 .NameInput {
-  width: 200px;
+  width: 25vw;
+  height: 30px;
   display: flex;
   justify-content: center;
+  font-family: 'Seaweed Script', cursive;
+  font-weight: 100;
+  font-size: 25px;
 }
 
 .PercentInput {
@@ -95,17 +118,33 @@ h2 {
   justify-content: center;
 }
 
+.ItemPercent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-weight: 600;
+  font-family: 'Cutive Mono', monospace;
+  font-size: 20px;
+  margin: 6px;
+}
+
 p {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: black;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: 'Cutive Mono', monospace;
 }
 
 .FormButton {
   width: 220px;
-  height: 25px;
+  height: 40px;
   border-radius: 30px;
   text-transform: uppercase;
-  /* display: flex;
-  align-items: center; */
+  background-color: chocolate;
+  color: white;
+  font-weight: 800;
 }

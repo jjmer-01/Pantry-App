@@ -29,11 +29,13 @@ class AddForm extends Component {
     render() {
         return (
             <div className="AddForm Forms">
-                <h2>ADD A FOOD TO YOUR PANTRY</h2>
-                <p>Food Name:</p>
-                <input className="NameInput" type="text" onChange={this.handleName} />
-                <p>How Full is the Container?</p>
-                <input className="PercentInput" type="range" min="0" max="100" onChange={this.handlePercentage} />
+                <div className="Inputs">
+                    <h2>ADD A FOOD TO YOUR PANTRY</h2>
+                    <p>Food Name:</p>
+                    <input className="NameInput" type="text" onChange={this.handleName} />
+                    <p>How Full is the Container?</p>
+                    <input className="PercentInput" type="range" min="0" max="100" onChange={this.handlePercentage} />
+                </div>
                 <button className="FormButton" onClick={() => this.props.addFood(this.state.foodName, this.state.foodPercentage)} >Add Food</button>
             </div>
         )
