@@ -38,7 +38,7 @@ h1 {
   color: white;
   height: 300px;
   width: 200px;
-  margin: 30px;
+  margin: 30px 15px 30px 15px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -81,18 +81,18 @@ h3 {
 }
 
 h2 {
-    font-family: 'Vast Shadow', cursive;
-    font-size: 40px;
-    font-weight: 100;
-    background-color: white;
-    color: grey;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    text-transform: uppercase;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
+  font-family: 'Vast Shadow', cursive;
+  font-size: 40px;
+  font-weight: 100;
+  background-color: white;
+  color: grey;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
 }
 
 .Forms {

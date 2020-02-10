@@ -42,8 +42,13 @@ class Pantry extends Component {
                 editingId: null
             })
         }
-   
     }
+
+    // editToggle() {
+    //     this.setState({
+    //         isEditing: !this.state.isEditing
+    //     })
+    // }
 
     updateFood = (id, foodName, foodPercentage) => {
         axios.put(`/api/pantry/${id}`).then(res => {
@@ -84,6 +89,7 @@ class Pantry extends Component {
                 </div> 
                 <div>
                 {
+             
                     this.state.isEditing 
                     ?
                     (
@@ -91,6 +97,8 @@ class Pantry extends Component {
                             editFood={editFood}
                             updateFood={this.updateFood}
                             editToggle={this.editToggle}
+                            // foodName={this.foodName}
+                            // foodPercentage={this.foodPercentage}
                         />
                     ) 
                     :
@@ -98,8 +106,7 @@ class Pantry extends Component {
                         <AddForm 
                             addFood={this.addFood}
                         />
-                        )
-                     
+                    )
                 }
                 </div>
             </div>

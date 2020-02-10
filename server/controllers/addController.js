@@ -1,4 +1,4 @@
-const axios = require('axios')
+// const axios = require('axios')
 
 const foodArr = [
     {
@@ -50,13 +50,18 @@ module.exports = {
             return element.id === +id
         })
 
-        foodArr[index] = {
-            foodName: foodName,
-            foodPercentage: foodPercentage
-        }
+        // foodArr[index] = {
+        //     foodName: foodName,
+        //     foodPercentage: foodPercentage
+        // }
 
-        axios.put()
-            .then()
+        foodArr[index].foodName = foodName
+        foodArr[index].foodPercentage = foodPercentage
+
+        // axios.put()
+        //     .then() //Why is this here?
+
+        
 
         res.status(200).send(foodArr)
 

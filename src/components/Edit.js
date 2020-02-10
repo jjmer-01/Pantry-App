@@ -11,6 +11,8 @@ class Edit extends Component {
         }
     }
 
+    // component did mount?
+    
     handleName = (e) => {
         this.setState({
             foodName: e.target.value
