@@ -17,7 +17,7 @@ h1 {
 }
 
 .Pantry {
-  background-color: lightblue;
+  background-color: rgb(228, 196, 93);
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
