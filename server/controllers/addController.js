@@ -50,21 +50,14 @@ module.exports = {
             return element.id === +id
         })
 
-        // foodArr[index] = {
-        //     foodName: foodName,
-        //     foodPercentage: foodPercentage
-        // }
+        const updatedItem = {
+            id: id,
+            foodName: foodName,
+            foodPercentage: foodPercentage
+        }
 
-        foodArr[index].foodName = foodName
-        foodArr[index].foodPercentage = foodPercentage
-
-        // axios.put()
-        //     .then() //Why is this here?
-
-        
-
+        foodArr.splice(index, 1, updatedItem)
         res.status(200).send(foodArr)
-
     },
 
     deleteFoodItem: (req, res) => {

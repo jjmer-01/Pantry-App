@@ -51,7 +51,7 @@ class Pantry extends Component {
     // }
 
     updateFood = (id, foodName, foodPercentage) => {
-        axios.put(`/api/pantry/${id}`).then(res => {
+        axios.put(`/api/pantry/${id}`, {foodName, foodPercentage}).then(res => {
             this.setState({foodArr: res.data})
         })
     }
@@ -97,8 +97,7 @@ class Pantry extends Component {
                             editFood={editFood}
                             updateFood={this.updateFood}
                             editToggle={this.editToggle}
-                            // foodName={this.foodName}
-                            // foodPercentage={this.foodPercentage}
+                            
                         />
                     ) 
                     :
