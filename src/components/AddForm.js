@@ -37,7 +37,11 @@ class AddForm extends Component {
                     <label className="AddLabel">
                         How Full is the Container?
                     </label>
-                    <input className="PercentInput" type="range" min="0" max="100" onChange={this.handlePercentage} />
+                        <div className="percentDiv">
+                        <p>0%</p>
+                        <input className="PercentInput" type="range" min="0" max="100" onChange={this.handlePercentage} />
+                        <p>100%</p>
+                        </div>
                 </div>
                 <button className="FormButton" onClick={() => 
                     this.props.addFood(this.state.foodName, this.state.foodPercentage)} >Add Food</button>

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 
 import '../App.css'
+// import Axios from 'axios'
 
 class Edit extends Component {
     constructor(props) {
@@ -10,8 +11,6 @@ class Edit extends Component {
             foodPercentage: this.props.editFood.foodPercentage
         }
     }
-
-    // component did mount?
     
     handleName = (e) => {
         this.setState({
@@ -25,6 +24,12 @@ class Edit extends Component {
         })
     }
 
+//    addToggle = () => {
+//        this.setState({
+//            if()
+//        })
+//    }
+
     render() {
         return (
             <div className="EditForm Forms">
@@ -35,12 +40,21 @@ class Edit extends Component {
                     <label className="EditLabel">
                         How Full is the Container?
                     </label>
-                        <input className="PercentInput" type="range" min="0" max="100" onChange={this.handlePercentage} value={this.state.foodPercentage} />  
+                        <div className="percentDiv">
+                        <p>0%</p>
+                        <input className="PercentInput" type="range" min="0" max="100" list="tickmarks" onChange={this.handlePercentage} value={this.state.foodPercentage} />
+                        <p>100%</p>
+                        </div>
                 </div>
-                <button className="FormButton" onClick={() => {
-                    this.props.updateFood(this.props.editFood.id, this.state.foodName, this.state.foodPercentage)
-                    this.props.editToggle()
-                    }} >Update Food</button>
+                <div>
+                    <button className="FormButton" onClick={() => {
+                        this.props.updateFood(this.props.editFood.id, this.state.foodName, this.state.foodPercentage)
+                        this.props.editToggle()
+                        }} >Update Food</button>
+                    <button className="FormButton cancelUpdateButton" onClick={() => {
+                        this.props.editToggle()
+                    }}>Cancel Update</button>
+                </div>
             </div>
         )
     }

@@ -30,7 +30,7 @@ class Pantry extends Component {
         })
     }
 
-    editToggle = (id) =>{
+    editToggle = (id) => {
         if(id){
             this.setState({
                 isEditing: true,
@@ -43,12 +43,6 @@ class Pantry extends Component {
             })
         }
     }
-
-    // editToggle() {
-    //     this.setState({
-    //         isEditing: !this.state.isEditing
-    //     })
-    // }
 
     updateFood = (id, foodName, foodPercentage) => {
         axios.put(`/api/pantry/${id}`, {foodName, foodPercentage}).then(res => {
@@ -97,7 +91,6 @@ class Pantry extends Component {
                             editFood={editFood}
                             updateFood={this.updateFood}
                             editToggle={this.editToggle}
-                            
                         />
                     ) 
                     :
