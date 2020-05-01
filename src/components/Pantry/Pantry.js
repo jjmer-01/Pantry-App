@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
-import FoodItems from './FoodItems'
-import Edit from './Edit'
-import AddForm from './AddForm'
+import FoodItems from '../FoodItems/FoodItems'
+import Edit from '../EditForm/Edit'
+import AddForm from '../AddForm/AddForm'
 
 import axios from 'axios'
 
-import '../App.css'
+import '../../App.css'
 
 class Pantry extends Component {
     constructor(props) {
