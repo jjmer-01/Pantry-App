@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Header from '../Header/Header'
 import FoodItems from '../FoodItems/FoodItems'
 import Edit from '../EditForm/Edit'
 import AddForm from '../AddForm/AddForm'
@@ -78,6 +79,7 @@ class Pantry extends Component {
 
      return (
             <div className="Pantry">
+                <Header />
                 <div className="FoodList">
                     {foodList}
                 </div> 
