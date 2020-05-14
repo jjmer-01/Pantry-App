@@ -1,6 +1,7 @@
 import React from 'react'
 
-import '../App.css'
+import Nav from '../Nav/Nav'
+import '../../App.css'
 
 function Header() {
     return (
@@ -8,6 +9,7 @@ function Header() {
         <h1>
             PANTRY TRACKER
         </h1>
+        <Nav />
     </div>
     )
 }

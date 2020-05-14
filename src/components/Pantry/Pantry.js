@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
-import FoodItems from './FoodItems'
-import Edit from './Edit'
-import AddForm from './AddForm'
+import Header from '../Header/Header'
+import FoodItems from '../FoodItems/FoodItems'
+import Edit from '../EditForm/Edit'
+import AddForm from '../AddForm/AddForm'
 
 import axios from 'axios'
 
-import '../App.css'
+import '../../App.css'
 
 class Pantry extends Component {
     constructor(props) {
@@ -78,6 +79,7 @@ class Pantry extends Component {
 
      return (
             <div className="Pantry">
+                <Header />
                 <div className="FoodList">
                     {foodList}
                 </div> 

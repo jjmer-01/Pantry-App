@@ -1,16 +1,20 @@
 import React from 'react'
-import Header from './components/Header'
-import Pantry from './components/Pantry'
+import routes from './routes'
+import { withRouter } from 'react-router-dom'
 
 import './App.css'
 
-function App() {
+function App(props) {
   return (
     <div className="App">
-      <Header />
-      <Pantry />
+      {props.location.pathname === '/'
+      ? (
+        <>{routes}</>
+      ) : (
+        <>{routes}</>
+      )}
     </div>
   )
 }
 
-export default App
+export default withRouter(App)
