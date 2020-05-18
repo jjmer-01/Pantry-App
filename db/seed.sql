@@ -3,7 +3,7 @@ CREATE TABLE users (
     email VARCHAR(100) UNIQUE,
     first_name VARCHAR(30),
     last_name VARCHAR(30),
-    hash INT
+    hash VARCHAR(255)
 )
 
 CREATE TABLE images (
