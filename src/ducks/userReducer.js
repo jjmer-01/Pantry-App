@@ -42,6 +42,7 @@ export function logout() {
         type: LOGOUT,
         payload: axios.get('/api/logout')
     }
+    return action
 }
 
 export default function userReducer(state = initialState, action) {

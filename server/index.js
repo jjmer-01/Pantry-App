@@ -9,8 +9,9 @@ const foodCtrl = require('./controllers/foodController')
 
 const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env
 
-const cors = require('cors')
+// const cors = require('cors')
 const app = express()
+app.use(express.json())
 
 
 app.use(session({
@@ -29,16 +30,16 @@ massive({
 }).then(db => {
     app.set('db', db)
     console.log('DATABASE CONNECTED FOR FUN AND FOR SCIENCE')
-    app.listen(SERVER_PORT, () => console.log(`SERVER IS STILL KILLING IT ALL DAY ON ${SERVER_PORT}`))
+    app.listen(SERVER_PORT, () => console.log(`SERVER IS CRUSHING IT ON ${SERVER_PORT}`))
 })
 
-app.use(cors())
+// app.use(cors())
 
 //ENDPOINTS (AUTH)
-app.get('/api/check', checkUser)
 app.post('/api/register', authCtrl.register)
 // app.post('/api/login', authCtrl.login)
 // app.post('/api/logout', authCtrl.logout)
+app.get('/api/check', checkUser)
 
 //ENDPOINTS (FOOD ITEMS)
 app.get('/api/pantry', foodCtrl.displayPantryArr)
