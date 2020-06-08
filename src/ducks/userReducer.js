@@ -22,18 +22,18 @@ export function checkUser() {
     return action
 }
 
-export function register() {
+export function register(first_name, last_name, email, username, password) {
     let action = {
         type: REGISTER,
-        payload: axios.get('/api/register')
+        payload: axios.post('/api/register', { first_name, last_name, email, username, password })
     }
     return action
 }
 
-export function login() {
+export function login(email, password) {
     let action = {
         type: LOGIN,
-        payload: axios.get('/api/login')
+        payload: axios.post('/api/login', { email, password })
     }
     return action
 }
@@ -41,7 +41,7 @@ export function login() {
 export function logout() {
     let action = {
         type: LOGOUT,
-        payload: axios.get('/api/logout')
+        payload: axios.post('/api/logout')
     }
     return action
 }
@@ -60,12 +60,12 @@ export default function userReducer(state = initialState, action) {
         case CHECK_USER + '_FULFILLED':
             return { ...state, loading: false, error: false, user: action.payload.data }
         case CHECK_USER + '_REJECTED':
-            console.log("CHECK_USER REJECTED:", action.payload)
             return { ...state, ...initialState }
 
         case REGISTER + '_PENDING':
             return { ...state, loading: true, error: false }
         case REGISTER + '_FULFILLED':
+            console.log('hit action.payload.data REGISTER FULFILLED, userReducer', action.payload.data)
             return { ...state, loading: false, user: action.payload.data }
         case REGISTER + '_REJECTED':
             return { ...state, loading: false, error: true, errorMessage: action.payload.response.data }
@@ -73,7 +73,10 @@ export default function userReducer(state = initialState, action) {
         case LOGIN + '_PENDING':
             return { ...state, loading: true, error: false }
         case LOGIN + '_FULFILLED':
-            return { ...state, loading: false, error: false, user: action.payload.data.user, foodItems: action.payload.data.foodItems } 
+            console.log('hit action.payload.data LOGIN FULFILLED, userReducer', action.payload.data)
+            return { ...state, loading: false, error: false, user: action.payload.data
+                // foodItems: action.payload.data.foodItems 
+            }
             //? Check on this working?
         case LOGIN + '_REJECTED':
             return { ...state, loading: false, error: true, errorMessage: action.payload.response.data }

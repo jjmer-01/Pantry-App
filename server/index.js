@@ -38,8 +38,8 @@ massive({
 
 //ENDPOINTS (AUTH)
 app.post('/api/register', checkUser, authCtrl.register)
-// app.post('/api/login', authCtrl.login)
-// app.post('/api/logout', authCtrl.logout)
+app.post('/api/login', checkUser, authCtrl.login)
+app.post('/api/logout', authCtrl.logout)
 app.get('/api/check', checkUser)
 
 //ENDPOINTS (FOOD ITEMS)
