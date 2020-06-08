@@ -2,12 +2,14 @@ INSERT INTO users (
     email, 
     first_name, 
     last_name, 
-    hash
+    hash,
+    username
 )
 VALUES (
     ${email}, 
     ${first_name}, 
     ${last_name}, 
-    ${hash}
+    ${hash},
+    ${username}
 )
-RETURNING user_id, email, first_name, last_name;
+RETURNING user_id, email, username, first_name, last_name;
